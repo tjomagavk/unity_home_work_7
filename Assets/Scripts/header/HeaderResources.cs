@@ -1,5 +1,5 @@
 ﻿using System;
-using Prefabs;
+using prefabs;
 using UnityEngine;
 
 namespace header

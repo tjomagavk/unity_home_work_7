@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Prefabs;
+using prefabs;
 using UnityEngine;
 using UnityEngine.UI;
 

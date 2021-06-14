@@ -11,6 +11,7 @@ namespace body
         [SerializeField] private HeaderResources headerResources;
         [SerializeField] private HeaderEnemies headerEnemies;
         [SerializeField] private GameSettings gameSettings;
+        [SerializeField] private SoundManager soundManager;
 
         private const float WaveTime = 10f;
         private const float AttackTime = 2f;
@@ -41,7 +42,7 @@ namespace body
             if (!_isAttack)
             {
                 _deltaWaveTime -= Time.deltaTime;
-                
+
                 headerEnemies.ActivateBarPoints(Mathf.FloorToInt(10 - (_deltaWaveTime * 100 / _waveTime / 10)));
             }
 
@@ -49,7 +50,6 @@ namespace body
             {
                 SetNextWaveTime();
                 Attack();
-                // headerResources.ChangeMoonshine(miningPerSecond);
             }
         }
 
@@ -67,9 +67,15 @@ namespace body
                 _countEnemies++;
                 _attackTime = AttackTime;
                 gameObject.GetComponent<Image>().enabled = false;
+                soundManager.StopAttack();
             }
             else
             {
+                if (!_isAttack)
+                {
+                    soundManager.PlayAttack(AttackTime);
+                }
+
                 _isAttack = true;
                 float areaWidth = gameObject.GetComponent<RectTransform>().rect.width;
                 float imageWidth = enemy.rectTransform.rect.width;

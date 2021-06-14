@@ -40,10 +40,5 @@ namespace body
             perSecond.text = _miningPerSecond.ToString();
             resourceImage.fillAmount = 1 - (_currentTime / MiningTime);
         }
-
-        public int GetMiningPerSecond()
-        {
-            return _miningPerSecond;
-        }
     }
 }

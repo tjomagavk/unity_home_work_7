@@ -1,4 +1,4 @@
-﻿using Prefabs;
+﻿using prefabs;
 using UnityEngine;
 
 namespace body

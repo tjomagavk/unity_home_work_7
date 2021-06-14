@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Prefabs
+namespace prefabs
 {
     public class HeaderResource : MonoBehaviour
     {

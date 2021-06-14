@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using body;
 using footer;
 using header;
-using Prefabs;
+using prefabs;
 using UnityEngine;
 
 public class GameMain : MonoBehaviour
